@@ -1,0 +1,1 @@
+C:\Users\duvan\Desktop\.NET_MAUI\GameTestApp\GameTestApp\GameTestApp.csproj;x64

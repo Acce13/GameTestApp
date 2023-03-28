@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GameTestApp.Views.GameTestPage"
+             Title="GameTestPage">
+    <ScrollView>
+        <VerticalStackLayout
+            Margin="30"
+            Spacing="20">
+            <Grid RowSpacing="0" ColumnSpacing="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!--Elementos-->
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    FontSize="Subtitle"
+                    FontAttributes="Bold"
+                    Text="Test de C#"/>
+                <!--Lista de preguntas-->
+                <!--<CollectionView
+                    x:Name="gameTestCollectionView"
+                    Grid.Row="1">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                <Label Text="{Binding Question}"/>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>-->
+                <StackLayout 
+                    Grid.Row="1"
+                    Grid.ColumnSpan="2"
+                    Spacing="10"
+                    Margin="10,20"
+                    Orientation="Vertical">
+                    <Label
+                        x:Name="GameQuestion"
+                        FontSize="Subtitle"
+                        FontAttributes="Bold"
+                        Text="{Binding Question}"/>
+                    <Entry
+                        x:Name="GameAnswer"
+                        Placeholder="Respuesta..."/>
+                    <CollectionView
+                        x:Name="GameOptionCollection">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout>
+                                    <RadioButton
+                                        Content="{Binding Respuesta}"
+                                        GroupName="options"
+                                        Value="{Binding Correcta}"/>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </StackLayout>
+                <!--End Lista de preguntas-->
+                <Button
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Clicked="RestartTest"
+                    Text="Restart"/>
+                <Button
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    Clicked="NextQuestion"
+                    Text="Next"/>
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

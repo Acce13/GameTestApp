@@ -1,0 +1,92 @@
+[
+  {
+    "type": "abierta",
+    "question": "¿Qué es una excepción en .NET y cómo se maneja?",
+    "answer": "condicion de error, try-catch",
+    "options": "[]"
+  },
+  {
+    "type": "abierta",
+    "question": "¿Puede describir la arquitectura básica de .NET?",
+    "answer": "lenguajes de programacion, maquina virtual, biblioteca de clases base, compilador, herramientas de desarrollo, biblioteca de terceros",
+    "options": "[]"
+  },
+  {
+    "type": "abierta",
+    "question": "¿Cuál es la diferencia entre una clase y una estructura en C#?",
+    "answer": "tipos por valor, tipos por referencia",
+    "options": "[]"
+  },
+  {
+    "type": "multiple",
+    "question": "¿Qué es la sobrecarga de métodos en C#?",
+    "answer": null,
+    "options": "[{\"respuesta\":\"La sobrecarga de métodos es la creación de varios métodos con el mismo nombre, pero con diferentes firmas y definiciones.\",\"correcta\":true},{\"respuesta\":\"Autenticacion, Autorizacion, SSL/TLS, CORS, Filtros de accion y Firewalls.\",\"correcta\":false},{\"respuesta\":\"No Cifrar la contraseña, limitar el intento de inicio de sesion, no almacenarlas en Cookies o Url requerir contraseñas fuertes y usar autenticacion multifactor\",\"correcta\":false},{\"respuesta\":\"Implementar políticas de contraseñas seguras, Implementar medidas de bloqueo de cuentas Utilizar herramientas de autenticación de dos factores, imitar el acceso a la aplicación, Proteger las conexiones de red y Monitorear los intentos de inicio de sesión.\",\"correcta\":false}]"
+  },
+  {
+    "type": "multiple",
+    "question": "¿Qué son los delegados en C#?",
+    "answer": null,
+    "options": "[{\"respuesta\":\"Los delegados permiten pasar los metodos como parametros.\",\"correcta\":false},{\"respuesta\":\"Los delegados pueden usarse para definir metodos de devolucion de llamada.\",\"correcta\":false},{\"respuesta\":\"Es un tipo de datos que representa una referencia a un metodo.\",\"correcta\":true},{\"respuesta\":\"No es necesario que los metodos coincidan exactamente con el tipo de delegado.\",\"correcta\":false}]"
+  },
+  {
+    "type": "multiple",
+    "question": "¿Qué es LINQ y para qué se utiliza?",
+    "answer": null,
+    "options": "[{\"respuesta\":\"Conjunto de instrucciones que le dicen a una computadora como realizar algun tipo de tarea.\",\"correcta\":false},{\"respuesta\":\"Conjunto de extensiones integradas que nos permite trabajar con colecciones de datos.\",\"correcta\":true},{\"respuesta\":\"Lenguaje de programacion y nos permite comunicarnos con la maquina.\",\"correcta\":false},{\"respuesta\":\"Ninguna de las anteriores\",\"correcta\":false}]"
+  },
+  {
+    "type": "multiple",
+    "question": "¿Qué es ADO.NET y para qué se utiliza?",
+    "answer": null,
+    "options": "[{\"respuesta\":\"Conjunto de instrucciones que le dicen a una computadora como realizar algun tipo de tarea.\",\"correcta\":false},{\"respuesta\":\"Conjunto de extensiones integradas que nos permite trabajar con colecciones de datos.\",\"correcta\":false},{\"respuesta\":\"Conjunto de herramientas que permiten mejorar el rendimiento de una vista.\",\"correcta\":false},{\"respuesta\":\"Conjunto de clases que exponen servicios de acceso a datos.\",\"correcta\":true}]"
+  },
+  {
+    "type": "abierta",
+    "question": "¿Qué es el patrón de repositorio y para qué se utiliza?",
+    "answer": "patron de diseño, aisla la capa de datos del resto de la app",
+    "options": "[]"
+  },
+  {
+    "type": "abierta",
+    "question": "¿Qué es el patrón MVC y para qué se utiliza?",
+    "answer": "patron de diseño, sirve para clasificar, informacion, logica, interfaz",
+    "options": "[]"
+  },
+  {
+    "type": "abierta",
+    "question": "¿Qué es el patrón de inyección de dependencias y para qué se utiliza?",
+    "answer": "patron de diseño, usado en la programacion orientada a objetos, separar nuestro codigo por responsabilidades",
+    "options": "[]"
+  },
+  {
+    "type": "multiple",
+    "question": "¿Cuáles son algunas de las mejores prácticas de seguridad que se deben seguir al trabajar con contraseñas en una aplicación .NET?",
+    "answer": null,
+    "options": "[{\"respuesta\":\"Cifrar la contraseña, limitar el intento de inicio de sesion, no almacenarlas en Cookies o Url requerir contraseñas fuertes y usar autenticacion multifactor\",\"correcta\":true},{\"respuesta\":\"Conjunto de extensiones integradas que nos permite trabajar con colecciones de datos.\",\"correcta\":false},{\"respuesta\":\"No Cifrar la contraseña, limitar el intento de inicio de sesion, no almacenarlas en Cookies o Url requerir contraseñas fuertes y usar autenticacion multifactor\",\"correcta\":false},{\"respuesta\":\"Conjunto de clases que exponen servicios de acceso a datos.\",\"correcta\":false}]"
+  },
+  {
+    "type": "multiple",
+    "question": "¿Qué son las vulnerabilidades de inyección de SQL y cómo se pueden prevenir en una aplicación .NET?",
+    "answer": null,
+    "options": "[{\"respuesta\":\"Cifrar la contraseña, limitar el intento de inicio de sesion, no almacenarlas en Cookies o Url requerir contraseñas fuertes y usar autenticacion multifactor\",\"correcta\":false},{\"respuesta\":\"Es un tipo de vulnerabilidad en la que un atacante usa un trozo de codigo SQL para manipular una base de datos y acceder a informacion potencialmente valiosa\",\"correcta\":true},{\"respuesta\":\"No Cifrar la contraseña, limitar el intento de inicio de sesion, no almacenarlas en Cookies o Url requerir contraseñas fuertes y usar autenticacion multifactor\",\"correcta\":false},{\"respuesta\":\"Conjunto de clases que exponen servicios de acceso a datos.\",\"correcta\":false}]"
+  },
+  {
+    "type": "multiple",
+    "question": "¿Cómo se pueden proteger las aplicaciones .NET de los ataques de fuerza bruta y qué medidas se deben tomar para prevenir este tipo de ataques?",
+    "answer": null,
+    "options": "[{\"respuesta\":\"Cifrar la contraseña, limitar el intento de inicio de sesion, no almacenarlas en Cookies o Url requerir contraseñas fuertes y usar autenticacion multifactor\",\"correcta\":false},{\"respuesta\":\"Es un tipo de vulnerabilidad en la que un atacante usa un trozo de codigo SQL para manipular una base de datos y acceder a informacion potencialmente valiosa\",\"correcta\":false},{\"respuesta\":\"No Cifrar la contraseña, limitar el intento de inicio de sesion, no almacenarlas en Cookies o Url requerir contraseñas fuertes y usar autenticacion multifactor\",\"correcta\":false},{\"respuesta\":\"Implementar políticas de contraseñas seguras, Implementar medidas de bloqueo de cuentas Utilizar herramientas de autenticación de dos factores, imitar el acceso a la aplicación, Proteger las conexiones de red y Monitorear los intentos de inicio de sesión.\",\"correcta\":true}]"
+  },
+  {
+    "type": "abierta",
+    "question": "¿Qué es un servicio web RESTful y cómo se implementa en .NET?",
+    "answer": null,
+    "options": "[{\"respuesta\":\"Es un tipo de servicio web que utiliza el protcolo HTTP para la comunicacion, este se implementa utilizando el framework ASP.NET\",\"correcta\":true},{\"respuesta\":\"Es un tipo de vulnerabilidad en la que un atacante usa un trozo de codigo SQL para manipular una base de datos y acceder a informacion potencialmente valiosa\",\"correcta\":false},{\"respuesta\":\"No Cifrar la contraseña, limitar el intento de inicio de sesion, no almacenarlas en Cookies o Url requerir contraseñas fuertes y usar autenticacion multifactor\",\"correcta\":false},{\"respuesta\":\"Implementar políticas de contraseñas seguras, Implementar medidas de bloqueo de cuentas Utilizar herramientas de autenticación de dos factores, imitar el acceso a la aplicación, Proteger las conexiones de red y Monitorear los intentos de inicio de sesión.\",\"correcta\":false}]"
+  },
+  {
+    "type": "abierta",
+    "question": "¿Cómo se puede proteger un servicio web RESTful en .NET?",
+    "answer": "autenticacion, autorizacion, ssl/tls, cors, filtros de accion, firewalls",
+    "options": "[]"
+  }
+]
