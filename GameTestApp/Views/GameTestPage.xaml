@@ -7,8 +7,9 @@
         <VerticalStackLayout
             Margin="30"
             Spacing="20">
-            <Grid RowSpacing="0" ColumnSpacing="10">
+            <Grid RowSpacing="10" ColumnSpacing="10">
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
@@ -17,7 +18,6 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-
                 <!--Elementos-->
                 <Label
                     Grid.Row="0"
@@ -25,18 +25,6 @@
                     FontSize="Subtitle"
                     FontAttributes="Bold"
                     Text="Test de C#"/>
-                <!--Lista de preguntas-->
-                <!--<CollectionView
-                    x:Name="gameTestCollectionView"
-                    Grid.Row="1">
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate>
-                            <StackLayout>
-                                <Label Text="{Binding Question}"/>
-                            </StackLayout>
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>-->
                 <StackLayout 
                     Grid.Row="1"
                     Grid.ColumnSpan="2"
@@ -46,26 +34,27 @@
                     <Label
                         x:Name="GameQuestion"
                         FontSize="Subtitle"
-                        FontAttributes="Bold"
-                        Text="{Binding Question}"/>
+                        FontAttributes="Bold"/>
                     <Entry
                         x:Name="GameAnswer"
-                        Placeholder="Respuesta..."/>
+                        Placeholder="Respuesta..."
+                        TextChanged="GetEntryValue"/>
                     <CollectionView
                         x:Name="GameOptionCollection">
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
                                 <StackLayout>
                                     <RadioButton
+                                        CheckedChanged="GetRadioValue"
                                         Content="{Binding Respuesta}"
                                         GroupName="options"
-                                        Value="{Binding Correcta}"/>
+                                        Value="{Binding Correcta}"
+                                        />
                                 </StackLayout>
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
                     </CollectionView>
                 </StackLayout>
-                <!--End Lista de preguntas-->
                 <Button
                     Grid.Row="2"
                     Grid.Column="0"
@@ -76,6 +65,12 @@
                     Grid.Column="1"
                     Clicked="NextQuestion"
                     Text="Next"/>
+                <Button
+                    x:Name="BtnFinish"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="2"
+                    Clicked="FinishTest"
+                    Text="Finish"/>
             </Grid>
         </VerticalStackLayout>
     </ScrollView>
