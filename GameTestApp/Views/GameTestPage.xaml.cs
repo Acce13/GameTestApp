@@ -39,8 +39,8 @@ public partial class GameTestPage : ContentPage
     void NextQuestion(object sender, EventArgs e)
     {
         if (gameTestList.Count > 1) {
-            Debug.WriteLine($"TextValue {textValue}");
-            Debug.WriteLine($"RadioValue {radioValue}");
+            //Debug.WriteLine($"TextValue {textValue}");
+            //Debug.WriteLine($"RadioValue {radioValue}");
             gameTestSelected = gameTestList[0];
             if (gameTestSelected.Type == "multiple")
             {
@@ -61,7 +61,16 @@ public partial class GameTestPage : ContentPage
     }
 
     void GetEntryValue(object sender, TextChangedEventArgs e) => textValue = e.NewTextValue.ToString().ToLower();
-    void GetRadioValue(object sender, CheckedChangedEventArgs e) => radioValue = e.Value;
+    void GetRadioValue(object sender, CheckedChangedEventArgs e)
+    {
+        //Variable tipo RadioButton 
+        RadioButton radioButton = (RadioButton)sender;
+        if (e.Value)
+        {
+            var valor = radioButton.Value;
+            Console.WriteLine(valor);
+        }
+    }
 
     //----------
     async void GetGameTestQuestions()
