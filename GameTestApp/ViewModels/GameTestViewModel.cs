@@ -10,6 +10,6 @@ namespace GameTestApp.ViewModels
     public class GameTestViewModel : BaseViewModel
     {
         public List<Option> Options { get; set; }
-        public string pregunta { get; set; } = "Mamahuevo";
+        public string pregunta { get; set; } = "";
     }
 }
