@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GameTestApp.Views.GameTestPage"
-             Title="GameTestPage">
+             Title="">
     <ScrollView>
         <VerticalStackLayout
             Margin="30"
@@ -59,18 +59,18 @@
                     Grid.Row="2"
                     Grid.Column="0"
                     Clicked="RestartTest"
-                    Text="Restart"/>
+                    Text="Reiniciar"/>
                 <Button
                     Grid.Row="2"
                     Grid.Column="1"
                     Clicked="NextQuestion"
-                    Text="Next"/>
+                    Text="Siguiente"/>
                 <Button
                     x:Name="BtnFinish"
                     Grid.Row="3"
                     Grid.ColumnSpan="2"
                     Clicked="FinishTest"
-                    Text="Finish"/>
+                    Text="Finalizar"/>
             </Grid>
         </VerticalStackLayout>
     </ScrollView>

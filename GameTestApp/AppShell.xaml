@@ -4,7 +4,8 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:GameTestApp.Views"
-    Shell.FlyoutBehavior="Disabled">
+    Shell.FlyoutBehavior="Disabled"
+    Shell.NavBarIsVisible="False">
 
     <ShellContent
         Title="Home"
@@ -15,5 +16,10 @@
         Title="GameTest"
         ContentTemplate="{DataTemplate local:GameTestPage}"
         Route="GameTestPage"/>
+
+    <ShellContent
+        Title="Score"
+        ContentTemplate="{DataTemplate local:ScorePage}"
+        Route="ScorePage"/>
 
 </Shell>

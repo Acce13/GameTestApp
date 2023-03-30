@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GameTestApp.Views.HomePage"
-             Title="HomePage">
+             Title="">
     <ScrollView>
         <VerticalStackLayout 
             Spacing="20"
@@ -11,19 +11,19 @@
             <Label 
                 FontAttributes="Bold"
                 FontSize="Header"
-                Text="C# Test"
+                Text="Bienvenido al test de C#"
                 VerticalOptions="Center" 
                 HorizontalOptions="Center"/>
             <Button
                 FontSize="Medium"
                 FontAttributes="Bold"
-                Text="Start Test"
-                Clicked="HandleNavigate"/>
+                Text="Iniciar"
+                Clicked="GoToTest"/>
             <Button
                 FontSize="Medium"
                 FontAttributes="Bold"
-                Text="Score"
-                Clicked="HandleNavigate"/>
+                Text="Puntuacion"
+                Clicked="GoToScore"/>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

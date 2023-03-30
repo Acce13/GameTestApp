@@ -9,6 +9,7 @@ namespace GameTestApp.Views;
 public partial class GameTestPage : ContentPage
 {
     GameTestRepository testRepository;
+    ScoreRespository scoreRespository;
     List<GameTest> gameTestList = new List<GameTest>();
     GameTest gameTestSelected = null;
 
@@ -16,11 +17,14 @@ public partial class GameTestPage : ContentPage
     bool radioValue = false;
     int score = 0;
 
+    public object Player { get; private set; }
+
     public GameTestPage()
 	{
 		InitializeComponent();
         this.BindingContext = new GameTestViewModel();
         testRepository = new GameTestRepository();
+        scoreRespository = new ScoreRespository();
     }
 
     //LifeCycles
@@ -33,18 +37,40 @@ public partial class GameTestPage : ContentPage
     //Element Events
     void RestartTest(object sender, EventArgs e)
     {
+        score = 0;
         GetGameTestQuestions();
     }
 
     void NextQuestion(object sender, EventArgs e)
     {
         if (gameTestList.Count > 1) {
-            //Debug.WriteLine($"TextValue {textValue}");
-            //Debug.WriteLine($"RadioValue {radioValue}");
             gameTestSelected = gameTestList[0];
             if (gameTestSelected.Type == "multiple")
             {
+                if (radioValue)
+                {
+                    score++;
+                    radioValue = false;
+                }
+            }
 
+            if (gameTestSelected.Type == "abierta")
+            {
+                Debug.WriteLine(textValue);
+                List<String> answers = gameTestSelected.Answer.Split(',').ToList();
+                int cantAnswer = 0;
+                foreach (String answer in answers)
+                {
+                    if (textValue.Contains(answer, StringComparison.OrdinalIgnoreCase))
+                    {
+                        cantAnswer++;
+                    }
+                }
+
+                if (cantAnswer == answers.Count)
+                {
+                    score++;
+                }
             }
             //----
             gameTestList.RemoveAt(0);
@@ -55,26 +81,35 @@ public partial class GameTestPage : ContentPage
         }
     }
 
-    void FinishTest(object sender, EventArgs e) 
+    async void FinishTest(object sender, EventArgs e) 
     {
-        DisplayAlert("Finish", "Has finalizado el test", "Ok");
+        bool action = await DisplayAlert("Test Finalizado", $"Su puntaje es de { score }, ¿Quieres volver a empezar?", "Si", "No");
+        if (action)
+        {
+            score = 0;
+            GetGameTestQuestions();
+        } else
+        {
+            scoreRespository.StoreScore(score);
+            await Navigation.PopAsync();
+        }
     }
 
     void GetEntryValue(object sender, TextChangedEventArgs e) => textValue = e.NewTextValue.ToString().ToLower();
     void GetRadioValue(object sender, CheckedChangedEventArgs e)
-    {
-        //Variable tipo RadioButton 
+    { 
         RadioButton radioButton = (RadioButton)sender;
         if (e.Value)
         {
-            var valor = radioButton.Value;
-            Console.WriteLine(valor);
+            radioValue = (bool)radioButton.Value;
         }
     }
 
     //----------
     async void GetGameTestQuestions()
     {
+        score = 0;
+        GameAnswer.Text = "";
         BtnFinish.IsVisible = false;
         gameTestList = await testRepository.GetGameTestsAsync();
         ShowGameTestQuestions();
@@ -89,5 +124,15 @@ public partial class GameTestPage : ContentPage
         GameOptionCollection.IsVisible = (gameTestList[0].Type == "multiple");
         //----
         GameOptionCollection.ItemsSource = JsonConvert.DeserializeObject<List<Option>>(gameTestList[0].Options);
+        //----
+        Reset();
+    }
+
+    //----------
+    void Reset()
+    {
+        radioValue = false;
+        textValue = "";
+        GameAnswer.Text = "";
     }
 }
